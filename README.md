@@ -1,3 +1,8 @@
+# Project: Portfolio
+
+# Description:
+The application guides you about skills and experience of developer.
+
 # UI1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
