@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import  emails from "../../../assets/email.json"
 
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -19,9 +20,9 @@ export class ContactComponent implements OnInit {
 
   createForm(){ 
     this.mailer =new FormGroup({
-      name: new FormControl(),
-      email: new FormControl(),
-      comment:new FormControl()
+      name: new FormControl('',[ Validators.required] ),
+      email: new FormControl('',[ Validators.required, Validators.email]),
+      comment:new FormControl('',[ Validators.required])
     })
     console.log(this.mailer.value);
 
@@ -29,11 +30,12 @@ export class ContactComponent implements OnInit {
   }
   
   createMail(){
-    this.submitted= true
-    console.log(this.mailer.value);
-    emails.push(this.mailer.value)
-    console.log(emails);
-
+    if(!this.mailer.errors){
+      this.submitted= true
+      console.log(this.mailer.value);
+      emails.push(this.mailer.value)
+      console.log(emails);
+    }
   }
   
 

@@ -5,18 +5,24 @@
             <div class="form-group">
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                  placeholder="Full Name" formControlName="name">
+                 <small *ngIf="mailer.controls.name.touched && mailer.get('name').errors" id="emailHelp" class="form-text text-muted">Feild Required</small>
             </div>
             <div class="form-group">
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                  placeholder="Email Address" formControlName="email">
+                 <small *ngIf="mailer.controls.email.touched && mailer.get('email').errors" id="emailHelp" class="form-text text-muted">Valid Email Required</small>
+
+
             </div>
             <div class="form-group">
                 <textarea type="email" class="form-control" name="" id="" cols="30" rows="10"
                  placeholder="Full Name" formControlName="comment"></textarea>
+                 <small *ngIf="mailer.controls.comment.touched && mailer.get('comment').errors" id="emailHelp" class="form-text text-muted">Feild Required</small>
+
                 <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" > -->
             </div>
             <div>
-                <Button type="submit" class="btn btn-info" (click)="createMail()" > Send</Button>
+                <Button [disabled]="mailer.invalid" type="submit" class="btn btn-info" (click)="createMail()" > Send</Button>
             </div>
         </form>
     </div>
