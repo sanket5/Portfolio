@@ -1,0 +1,35 @@
+
+<div class="container1">
+    <div class="form-container" *ngIf="!submitted; else message">
+        <form [formGroup]="mailer">
+            <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                 placeholder="Full Name" formControlName="name">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                 placeholder="Email Address" formControlName="email">
+            </div>
+            <div class="form-group">
+                <textarea type="email" class="form-control" name="" id="" cols="30" rows="10"
+                 placeholder="Full Name" formControlName="comment"></textarea>
+                <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" > -->
+            </div>
+            <div>
+                <Button type="submit" class="btn btn-info" (click)="createMail()" > Send</Button>
+            </div>
+        </form>
+    </div>
+    <div class="svg" *ngIf="!submitted">
+        <img src="../../../assets/meeting.svg" class="img-fluid" width="70%" alt="">
+    </div>  
+    <div >
+        <ng-template #message>
+            <div class="card">
+                <div class="card-title">
+                    <h4>Thank you for your Response !</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+
+.container1{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.form-container{
+    display: flex;
+    margin: 50px 5px;
+    flex-basis: 50%;
+    background-color: wheat;
+    justify-content: center;
+    border-radius: 50px 50px 0 50px;
+}
+
+
+form{
+    margin: 30px 10px;
+    flex-basis: 60%;
+}
+
+.card{
+    display: flex;
+    margin-top: 25px;
+    background-color: wheat;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+}
+.card:hover, .form-container:hover{
+    box-shadow: 2px 5px;
+}
+
+
+.svg{
+    display: flex;
+    justify-content: center;
+    flex-basis: 30%;
+}
+
+
+@media screen and (max-width: 767px){
+    .form-container{
+        flex-basis: 80%;
+    }
+    .svg{
+        flex-basis: 80%;
+    }
+}
+
+
+

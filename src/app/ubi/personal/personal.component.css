@@ -1,0 +1,96 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
+body,html{
+    background-color: rgb(205, 205, 226);
+}
+
+.navbar-custom{
+    background-color: rgb(13, 81, 112);
+    color: wheat;
+}
+
+.nav-link, .navbar-brand{
+    color: wheat;
+}
+
+.card{
+    display: flex;
+    margin-top: 25px;
+    background-color: wheat;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+}
+.card:hover{
+    box-shadow: 2px 5px;
+}
+
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;   
+    flex-wrap: wrap;
+}
+
+
+.fa{
+    margin: 0 5px;
+}
+
+.detail-card{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}   
+
+.left{
+    flex-basis: 55%;
+}
+.right{
+    flex-basis: 30%;
+}
+
+img{
+    margin: 10px;
+}
+
+.image{
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+a { color: inherit; } 
+
+.card-title{
+    font-weight: bolder;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+p{
+    text-justify: auto;
+    text-align: justify;
+}
+
+
+@media screen and (max-width: 767px){
+    .left{
+        flex: 1;
+        min-width: 400px;
+    }
+    .right{
+        flex: 1;
+        min-width: 300px;
+    }
+}
+
+table,td,tr{
+    padding: 5px 10px;
+}
+
+
+
+

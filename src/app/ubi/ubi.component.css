@@ -1,0 +1,58 @@
+
+body,html{
+    background-color: rgb(205, 205, 226);
+}
+
+.navbar-custom{
+    background-color: rgb(13, 81, 112);
+    color: wheat;
+}
+
+.nav-link, .navbar-brand{
+    color: wheat;
+}
+
+.card{
+    display: flex;
+    margin-top: 25px;
+    background-color: wheat;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;   
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 767px){
+    .card-body{
+        text-align: center;
+    }
+}
+
+
+.fa{
+    margin: 0 5px;
+}
+
+.detail-card{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+}   
+.details1{
+    flex-basis: 65%;    
+}
+.details2{
+    flex-basis: 25%;
+}
+
+
+
+
+
