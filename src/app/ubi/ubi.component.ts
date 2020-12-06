@@ -18,8 +18,6 @@ export class UbiComponent implements OnInit {
       l.classList.remove('active')
     })
     e.target.classList.add('active')
-    
-    
   }
 
 

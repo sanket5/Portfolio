@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import  emails from "../../../assets/email.json"
 
 @Component({
   selector: 'app-contact',
@@ -24,13 +25,16 @@ export class ContactComponent implements OnInit {
     })
     console.log(this.mailer.value);
 
+
   }
   
   createMail(){
     this.submitted= true
-    console.log(12);
     console.log(this.mailer.value);
-    
+    emails.push(this.mailer.value)
+    console.log(emails);
+
   }
+  
 
 }
