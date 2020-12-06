@@ -1,7 +1,7 @@
 # Project: Portfolio
 
 # Description:
-The application guides you about skills and experience of developer.
+The application guides you about skills and experience of a developer.
 
 # UI1
 
