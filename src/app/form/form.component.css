@@ -1,0 +1,73 @@
+
+.container-fluid{
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+form{
+    margin-top: 50px;
+    width: 50%;
+    background-color: wheat;
+    padding: 5%;
+    border-radius: 50px 0 0 50px;
+}
+
+.extras{
+    margin-top: 50px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+button{
+    float: right;
+    margin: 10px 5px;
+}
+.education_details{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.language, .contact_details, .skills {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+ }
+ 
+.spe_lang, .spe-skills{
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+}
+.spe-contact{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+.full_width{
+    width: 100%;
+}
+.fifty-width{
+    width: 45%;
+}
+
+@media screen and (max-width: 767px){
+    form{
+        margin-top: 50px;
+        width: 80%;
+        background-color: wheat;
+        padding: 5%;
+        border-radius: 50px 0 0 50px;
+    }
+    .extras{
+        display: none
+    }
+
+}
+

@@ -10,6 +10,7 @@ import { UbiComponent } from './ubi/ubi.component';
 import { PersonalComponent } from './ubi/personal/personal.component';
 import { ProfessionalComponent } from './ubi/professional/professional.component';
 import { ContactComponent } from './ubi/contact/contact.component';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ContactComponent } from './ubi/contact/contact.component';
     UbiComponent,
     PersonalComponent,
     ProfessionalComponent,
-    ContactComponent
+    ContactComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

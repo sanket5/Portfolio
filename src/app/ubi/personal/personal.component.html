@@ -8,13 +8,13 @@
             <div class="col-sm-12 col-md-7 col-lg-8">
                 <div class="row card-body">
                     <div class="col-sm-12 col-md-8 col-lg-7 " style="text-align: center;">
-                        <h5 class="card-title">Sanket Jambhorkar</h5>
-                        <span class="card-text"> Web Developer | MEAN stack Developer  </span> 
+                        <h5 class="card-title">  {{ displayData.personal_details.fname }}</h5>
+                        <span class="card-text"> {{ displayData.personal_details.work }}  </span> 
                         <div style="margin: 10px;"> 
-                         <a href=""> <i class="fa fa-facebook-square fa-2x " aria-hidden="true" ></i> </a>
-                         <a href="https://www.linkedin.com/in/sanket-jambhorkar-sj/"><i class="fa fa-linkedin-square fa-2x " aria-hidden="true"></i></a>
-                         <a href=""><i class="fa fa-twitter-square fa-2x " aria-hidden="true"></i></a>
-                         <a href="https://github.com/sanket5"><i class="fa fa-github-square fa-2x " aria-hidden="true"></i></a>   
+                         <a href="{{displayData.contact_details.fb}}"> <i class="fa fa-facebook-square fa-2x " aria-hidden="true" ></i> </a>
+                         <a href="{{displayData.contact_details.li}}"><i class="fa fa-linkedin-square fa-2x " aria-hidden="true"></i></a>
+                         <a href="{{displayData.contact_details.tw}}"><i class="fa fa-twitter-square fa-2x " aria-hidden="true"></i></a>
+                         <a href="{{displayData.contact_details.gt}}"><i class="fa fa-github-square fa-2x " aria-hidden="true"></i></a>   
                         </div>
                     </div>
                     <div class="col-sm-12 col-md 4 col-lg-5" style="text-align: center;">
@@ -34,10 +34,7 @@
                     About Me
                 </div>
                 <div class="card-body">
-                    <p>Innovative, forward-thinking full stack developer with 2 years of experience in up to date technologies
-                        such as Angular and Node. Seeking a position in an environment which emphasizes teamwork and
-                        encourages learning by doing.
-                    </p>
+                    <p>  {{ displayData.personal_details.about }}  </p>
                 </div>
             </div>
                 <div class="card">
@@ -66,11 +63,15 @@
                     <table>
                         <tr>
                             <td style="text-align: center;"> <i class="fa fa-envelope fa-2x" aria-hidden="true" ></i> </td>
-                            <td> sanket.jambhorkar@gmail.com </td>
+                            <td> {{displayData.contact_details.email}} </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"> <i class="fa fa-mobile fa-3x" aria-hidden="true"></i> </td>
+                            <td> {{displayData.contact_details.mob}} </td>
                         </tr>
                         <tr>
                             <td style="text-align: center;">  <i class="fa fa-map-marker fa-2x" aria-hidden="true" ></i> </td>
-                            <td>  Wardha, Maharashtra </td>
+                            <td>  {{displayData.contact_details.address}} </td>
                         </tr>
                     </table>
                 </div>
@@ -82,15 +83,10 @@
                     </div>
                     <div class="card-body">
                         <table>
-                            <tr>
+                            <tr *ngFor="let edu of displayData.education_details">
                                 <td style="text-align: center;"> <i class="fa fa-graduation-cap fa-2x" aria-hidden="true" ></i> </td>
-                                <td> <h6> Datta Meghe Institute of Engineering,Technology and Research </h6>
-                                    Nagpur University(2013-2016) </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">  <i class="fa fa-graduation-cap fa-2x" aria-hidden="true" ></i> </td>
-                                <td>   <h6> Aacharya Shrimannarayan Polytechnic </h6>
-                                    M.S.B.E.T (2010-2013)  </td>
+                                <td> <h6> {{edu.school}} </h6>
+                                    {{edu.university}} ( {{ edu.from }} - {{ edu.to }} ) </td>
                             </tr>
                         </table>
                     </div>
@@ -102,18 +98,9 @@
                 </div>
                 <div class="card-body">
                     <table>
-                        <tr>
-                            <td> <b>English: </b></td>
+                        <tr *ngFor="let lang of displayData.languages">
+                            <td> <b>{{ lang.language }}: </b></td>
                             <td> Proficient </td>
-                        </tr>
-                        <tr>
-                            <td> <b> Hindi:</b> </td>
-                            <td> Proficient </td>
-                        </tr>
-                        <tr>
-                            <td> <b> Marathi: </b></td>
-                            <td> Proficient </td>
-                            <td> <u>Mother Tongue  </u> </td>
                         </tr>
                     </table>
                 </div>

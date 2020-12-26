@@ -1,0 +1,91 @@
+
+
+{
+    "contact_details":{
+      "address":"Wardha, Maharashtra",
+      "email":"sanket.jambhorkar@gmail.com",
+      "fb":"",
+      "gt":"https://github.com/sanket5",
+      "li":"https://www.linkedin.com/in/sanket-jambhorkar-sj/",
+      "mob":"919049381893",
+      "tw":""
+    },
+    "education_details":[
+      {
+        "school":"Datta Meghe Institute of Engineering Technology and Research",
+        "university":"Nagpur University",
+        "from":"2013",
+        "to":"2016",
+        "ongoing":""
+      },
+      {
+        "school":"Acharya Srimannarayan Polytechnic",
+        "university":"M.S.B.T.E",
+        "from":"2010",
+        "to":"2013",
+        "ongoing":""
+      }
+    ],
+    "experiences":[
+      {
+        "company": "Infosys Ltd",
+        "designation": "System Engineer",
+        "exp_current": "True",
+        "exp_description": "Developed scalable Single page web applications using mean stack technologies. Worked with established team of 25+ developers within agile working enjoyment. The experience of going through different phases of application development. Having experience over development of applications with responsive and user rick experienced SPA using Angular 7, HTML5, CSS, Bootstrap, Object Oriented JavaScript. Participated in testing, development and debugging of newly built capabilities. Assisted in basic database architectural strategies as per business requirements and back-end designs",
+        "exp_from": "Oct-2018",
+        "exp_to": ""
+      },
+      {
+        "company": "Mahatma Gandhi Institute of Rural Engineering",
+        "designation": "Project Associate",
+        "exp_current": "False",
+        "exp_description": "Coordinated activities of engineering or technical personnel involved in designing, fabricating, modifying, or testing of agricultural Machineries. Formulate mathematical models or other methods of computer analysis to develop, evaluate, or modify design, according to customer engineering requirements. Wrote technical reports or other documentation, such as handbooks or bulletins, for use by engineering staff, management, or customers.",
+        "exp_from": "Mar-2018",
+        "exp_to": "Dec-2018"
+      }
+    ],
+    "languages":[
+      {
+        "language": "English"
+      },
+      {
+        "language": "Marathi"
+      },
+      {
+        "language": "Hindi"
+      }
+    ],
+    "personal_details":{
+      "about": "Innovative, forward-thinking full stack developer with 2 years of experience in up to date technologies such as Angular and Node. Seeking a position in an environment which emphasizes teamwork and encourages learning by doing.",
+      "fname": "Sanket Jambhorkar",
+      "work": "Web Developer | Mean Stack Developer"
+    },
+    "projects":[
+      {
+        "pdescription": "An American organization majorly working for ease of providing home loans, mortgages and their process management.",
+        "pname": "Movement Mortgage"
+      },
+      {
+        "pdescription": "A learning/training platform mainly used by Infosys for Training talents with new edge technologies.",
+        "pname": "Lex.infosysapps.com"
+      }
+    ],
+    "skills":[
+      {
+        "pro": "80",
+        "skill": "Angular"
+      },
+      {
+        "pro": "80",
+        "skill": "Node Js"
+      },
+      {
+        "pro": "80",
+        "skill": "Express Js"
+      },
+      {
+        "pro": "80",
+        "skill": "MongoDB"
+      }
+    ]
+  }

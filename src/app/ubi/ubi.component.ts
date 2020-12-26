@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from '../services/portfolio.service';
 
 @Component({
   selector: 'app-ubi',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UbiComponent implements OnInit {
 
-  constructor() { }
+  constructor(  private portService: PortfolioService ) {
+    portService.dataShared.subscribe()
+   }
 
   ngOnInit(): void {
+    
   }
 
   setActive(e){

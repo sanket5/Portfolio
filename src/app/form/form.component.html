@@ -1,0 +1,234 @@
+
+
+<div class="container-fluid">
+
+    <form action="onSubmit()" [formGroup]="myPortfolio">
+        <div class="full_width" style="margin-bottom:10px ;">
+            <h3 class="text-center"> Create Your Portfolio </h3>
+        </div>
+        <div formGroupName="personal_details">
+            <div>
+                <h4> Personal Details </h4>
+            </div>
+            <hr>
+            <hr>
+            <div class="form-group">
+                <label for="">Full Name</label>
+               <input type="text" class="form-control" formControlName="fname" >    
+            </div>
+            <div class="form-group">
+                <label for="">Work Profile</label>
+               <input type="text" class="form-control" formControlName="work" >    
+            </div>
+            <div>
+                <label for="">About Me</label>
+                <textarea name="about" id="" cols="20" rows="5" class="form-control" formControlName="about"></textarea>
+            </div>
+        </div>
+        <hr>
+        <div class="education_details" formArrayName="education_details">
+            <div class="full_width">
+                <h5> Education </h5>
+            </div>
+            <div class="full_width" *ngFor="let edu of getControlEdu(); let i = index">
+                <div [formGroupName]="i">
+                    <div class="form-group">
+                        <label for="School"> School  </label>
+                        <input type="text" name="" id="" class="form-control" formControlName="school">  
+                    </div>
+                    <div class="form-group">
+                        <label for="School"> University  </label>
+                        <input type="text" name="" id="" class="form-control" formControlName="university">  
+                    </div>
+                    <div class="form-group row" > 
+                        <label for="School" class="col"> Duration  </label>
+                        <input type="text" name="" id="" class="form-control col" formControlName="from">  
+                        <input type="text" name="" id="" class="form-control col" formControlName="to">  
+                        <label for="School" class="col"> Persuing  </label>
+                        <input type="checkbox" name="" id="" class="form-control col" formControlName="ongoing">  
+                    </div>
+                </div>
+                <div *ngIf="i>0">
+                    <button class="btn btn-info" (click)="removeEducation(i)"> X </button>
+                </div>
+            </div>
+            <div class="full_width">
+                <button class="btn btn-info" (click)="addEducation()" >Add Education</button>
+            </div>
+        </div>
+        <hr>
+        <div class="language" formArrayName="languages" >    
+            <div class="full_width" >
+                <h5> Languages </h5>
+            </div>
+            <div class="spe_lang" >
+                <div *ngFor="let language of getControlLanguges(); let i=index">
+                    <div [formGroupName]="i">
+                        <input type="text" name="" id="" class="form-control" formControlName="language" >
+                    </div>
+                    <div *ngIf="i>0">
+                        <button class="btn btn-info" (click)="removeLanguage(i)" > X </button>
+                    </div>
+                </div>
+            </div>
+            <div class="full_width">
+                <button class="btn btn-info" (click)="addLanguage()" > Add Language </button>
+            </div>
+        </div>
+        <hr>
+        <div class="contact_details"  formGroupName="contact_details">
+            <div class="spe-contact">
+                <div  class="full_width"> <h5> Contact Details </h5> </div>
+                <div class="fifty-width">
+                    <label for="">Email Address</label>
+                    <input type="text" class="form-control" formControlName="email" > 
+                </div>
+                <div class="fifty-width">
+                    <label for="">Mob Number</label>
+                    <input type="text" class="form-control" formControlName="mob" > 
+                </div>
+                <div class="fifty-width">
+                    <label for="">Address</label>
+                    <input type="text" class="form-control" formControlName="address" > 
+                </div>
+                    <div class="fifty-width">
+                        <label for="">Facebook Handler</label>
+                        <input type="text" class="form-control" formControlName="fb" > 
+                    </div>
+                    <div class="fifty-width">
+                        <label for="">LinkedIn Handler</label>
+                        <input type="text" class="form-control" formControlName="li" > 
+                    </div>
+                    <div class="fifty-width">
+                        <label for="">Twitter Handler</label>
+                        <input type="text" class="form-control" formControlName="tw" > 
+                    </div>
+                    <div class="fifty-width">
+                        <label for="">GitHub Handler</label>
+                        <input type="text" class="form-control" formControlName="gt" > 
+                    </div>
+            </div>
+
+        </div>
+        <hr>
+        <hr>
+        <div>
+            <h4> Professional Details </h4>
+        </div>
+        <div class="skills" formArrayName="skills">
+            <div class="full_width"> <h5> Skills </h5> </div>
+            <div class="spe-skills">
+                <div class="fifty-width" *ngFor="let skill of getControlSkills(); let i = index" >
+                    <div [formGroupName]="i" >
+                        <div class="row">
+                            <div class="col form-group">
+                                <input type="text" class="form-control" formControlName="skill"   >
+                                <label for=""> Profeciency out of 100</label>
+                                <input style="width: 30%;" type="number" name="" id="" class="form-control" formControlName="pro">
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="i>0" >
+                        <button class="btn btn-info" (click)="removeSkills(i)" > X </button>
+                    </div>
+                </div>
+            </div>
+
+        <hr>
+            <div class="full_width">
+                <button class="btn btn-info" (click)="addSkills()" > Add Skill </button>
+            </div>
+        </div>
+        <hr>
+        <div formArrayName="experiences">
+            <div class="full_width"> <h5> Experience </h5> </div>
+            <div *ngFor="let experience of getControlExperience(); let i =index">
+                <div [formGroupName]="i" >
+                    <div class="form-group">
+                        <label for=""> Designation </label>
+                        <input type="text" name="" id="" class="form-control" formControlName="designation" >
+                    </div>
+                    <div class="form-group" >
+                        <label for=""> Company Name </label>
+                        <input type="text" name="" id="" class="form-control" formControlName="company" >
+                    </div>
+                    <div class="form-group" >
+                        <label for=""> Description </label>
+                        <input type="text" name="" id="" class="form-control" formControlName="exp_description" >
+                    </div>
+                    <div class="form-group row" > 
+                        <label for="School" class="col"> Eperience Duration  </label>
+                        <input type="text" name="" id="" class="form-control col" formControlName="exp_from">  
+                        <input type="text" name="" id="" class="form-control col" formControlName="exp_to">  
+                        <label for="School" class="col"> Current  </label>
+                        <input type="checkbox" name="" id="" class="form-control col" formControlName="exp_current">  
+                    </div>
+                </div>
+                <div *ngIf="i>0" >
+                    <button class="btn btn-info" (click)="removeExperience(i)" > X </button>
+                </div>
+            </div>
+            <div class="full_width">
+                <button class="btn btn-info" (click)="addExperience()" > Add Experience </button>
+            </div>
+
+        </div>
+        <hr>
+        <div formArrayName="projects">
+            <div class="full_width"> <h5> Projects </h5> </div>
+            <div *ngFor="let ptoject of getControlProject(); let i =index">
+                <div [formGroupName] ="i">
+                    <div>
+                        <label for="">Project Name</label>
+                        <input type="text" name="" id="" class="form-control" formControlName="pname" >
+                    </div>
+                    <div>
+                        <label for="">Project Description</label>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control" formControlName="pdescription"></textarea>
+                    </div>
+                </div>
+                <div *ngIf="i>0"> 
+                    <button class="btn btn-info" (click)="removeProject(i)"> X </button>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-info" (click)="addProject()" > Add Project </button>
+            </div>
+
+        </div>
+
+        <div class="full_width row">
+            <button class="btn btn-info" type="button" (click)="onSubmit()" > Create Portfolio</button>
+        </div>
+    </form>
+
+    <div class="extras">
+       <div>
+            <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+       </div>
+       
+       <div>
+        <i class="fa fa-graduation-cap fa-5x" aria-hidden="true"></i>
+       </div>
+       
+       <div>
+        <i class="fa fa-language fa-5x" aria-hidden="true"></i>
+       </div>
+       
+       <div>
+        <i class="fa fa-info fa-5x" aria-hidden="true"></i>
+       </div>
+       
+       <div>
+        <i class="fa fa-book fa-5x" aria-hidden="true"></i>
+       </div>
+       
+       <div>
+        <i class="fa fa-briefcase fa-5x" aria-hidden="true"></i>
+       </div>
+       
+
+        
+    </div>
+</div>
+

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as userData from "../demoData.json"
+
 
 @Component({
   selector: 'app-personal',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalComponent implements OnInit {
 
-  constructor() { }
+  displayData;
+  constructor(  ) {    
+   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+    if (sessionStorage.getItem('userData')){
+      this.displayData = JSON.parse( sessionStorage.getItem('userData') )
+    }
+    else{
+      this.displayData = userData['default']
+    }
+    console.log(this.displayData.personal_details);
+        
   }
 
   scroll(target: HTMLElement ){
