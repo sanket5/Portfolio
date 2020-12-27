@@ -10,6 +10,8 @@ import * as userData from "../demoData.json"
 export class PersonalComponent implements OnInit {
 
   displayData;
+  profilePic;
+  defaultPic ="./../../../assets/me.jpg"
   constructor(  ) {    
    }
 
@@ -20,7 +22,8 @@ export class PersonalComponent implements OnInit {
     else{
       this.displayData = userData['default']
     }
-    console.log(this.displayData.personal_details);
+    this.profilePic = sessionStorage.getItem('profilePic')
+
         
   }
 

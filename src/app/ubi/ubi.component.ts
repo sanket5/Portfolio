@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PortfolioService } from '../services/portfolio.service';
 
 @Component({
@@ -8,12 +9,22 @@ import { PortfolioService } from '../services/portfolio.service';
 })
 export class UbiComponent implements OnInit {
 
-  constructor(  private portService: PortfolioService ) {
-    portService.dataShared.subscribe()
+  path;
+  constructor(  private portService: PortfolioService, private route :Router ) {
+
    }
 
   ngOnInit(): void {
-    
+    let path = this.route.url
+    console.log(path);
+      if (path == "/profile/me"){
+        var link = document.querySelectorAll('.active')
+        link.forEach(l=>{
+          l.classList.remove('active')
+        })
+        document.getElementById('home').classList.add('active')
+      }
+      
   }
 
   setActive(e){

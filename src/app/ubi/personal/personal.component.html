@@ -3,7 +3,7 @@
     <div class="card">
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-3 image" style="text-align: center;">
-                <img class="card-img-top img-fluid img-thumbnail" src="./../../../assets/me.jpg" style="border-radius: 50%; width: 150px; height: 150px;;" alt="Card image cap">
+                <img class="card-img-top img-fluid img-thumbnail" src="{{displayData.personal_details.profilePic}}" style="border-radius: 50%; width: 150px; height: 150px;;" alt="Card image cap">
             </div>
             <div class="col-sm-12 col-md-7 col-lg-8">
                 <div class="row card-body">
@@ -46,12 +46,9 @@
                             <img class="card-img-top img-fluid img-thumbnail" src="../../../assets/two.jpg" style="width: 70%;" alt="Card image cap">
                         </div>
                         <div class="project-details">
-                            <h5> Movement Morgage </h5>
+                            <h5>{{ displayData.projects[0].pname }} </h5>
                             <p>
-                                An American organization majorly working for ease of providing home loans, mortgages and their process management.
-                            </p>
-                            <p>
-                                Work involves Single Page application developement, user rich experience, Admin portal view etc.
+                                {{ displayData.projects[0].pdescription }}
                             </p>
                         </div>
                     </div>

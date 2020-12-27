@@ -23,12 +23,12 @@ const routes: Routes = [
         path:'contact', component: ContactComponent
       },
       {
-        path:"", redirectTo:"create", pathMatch:'full'
+        path:"", redirectTo:"me", pathMatch:'full'
       }
     ] 
 },
   {
-    path:"", redirectTo:"profile", pathMatch:'full'
+    path:"", redirectTo:"profile/create", pathMatch:'full'
   }
   ];
 

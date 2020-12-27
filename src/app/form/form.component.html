@@ -20,9 +20,19 @@
                 <label for="">Work Profile</label>
                <input type="text" class="form-control" formControlName="work" >    
             </div>
-            <div>
+            <div class="form-group">
                 <label for="">About Me</label>
                 <textarea name="about" id="" cols="20" rows="5" class="form-control" formControlName="about"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Profile Picture</label>
+                <div>
+                    <input type="file" name="" id="" (change)="selectPic($event)" formControlName="profilePic" >
+                    <div  class="image">
+                        <img  id="uplodedImg" src="" alt="" style="width:200px; height: 200px; display: none">
+                    </div>
+                </div>
+                
             </div>
         </div>
         <hr>
@@ -40,12 +50,14 @@
                         <label for="School"> University  </label>
                         <input type="text" name="" id="" class="form-control" formControlName="university">  
                     </div>
-                    <div class="form-group row" > 
+                    <div class="form-group" > 
                         <label for="School" class="col"> Duration  </label>
-                        <input type="text" name="" id="" class="form-control col" formControlName="from">  
-                        <input type="text" name="" id="" class="form-control col" formControlName="to">  
-                        <label for="School" class="col"> Persuing  </label>
-                        <input type="checkbox" name="" id="" class="form-control col" formControlName="ongoing">  
+                        <div class="form-group" style="display: flex; justify-content: space-between;">
+                            <input type="text" name="" id="" class="form-control col" formControlName="from">  
+                            <span> __ </span>
+                            <input type="text" name="" id="" class="form-control col" formControlName="to">  
+                        </div>
+                        
                     </div>
                 </div>
                 <div *ngIf="i>0">
@@ -154,14 +166,15 @@
                     </div>
                     <div class="form-group" >
                         <label for=""> Description </label>
-                        <input type="text" name="" id="" class="form-control" formControlName="exp_description" >
+                        <textarea name="" id="" cols="30" rows="5" type="text" name="" id="" class="form-control" formControlName="exp_description"></textarea>
                     </div>
-                    <div class="form-group row" > 
-                        <label for="School" class="col"> Eperience Duration  </label>
-                        <input type="text" name="" id="" class="form-control col" formControlName="exp_from">  
-                        <input type="text" name="" id="" class="form-control col" formControlName="exp_to">  
-                        <label for="School" class="col"> Current  </label>
-                        <input type="checkbox" name="" id="" class="form-control col" formControlName="exp_current">  
+                    <div class="form-group" > 
+                        <label for="School" >  Duration  </label>
+                            <div class="form-group" style="display: flex; justify-content: space-between;">
+                                <input type="text" name="" id="" class="form-control" formControlName="exp_from">
+                                <span> _ </span>  
+                                <input type="text" name="" id="" class="form-control" formControlName="exp_to"> 
+                            </div>                         
                     </div>
                 </div>
                 <div *ngIf="i>0" >
@@ -197,8 +210,12 @@
 
         </div>
 
+        <div *ngIf="!myPortfolio.valid && myPortfolio.dirty" class="full_width row">
+            <h5 style="color: red;"> All Feilds are Mendatory </h5>
+        </div>
         <div class="full_width row">
-            <button class="btn btn-info" type="button" (click)="onSubmit()" > Create Portfolio</button>
+            <button class="btn btn-info" type="button" (click)="onSubmit()" [disabled]="!myPortfolio.valid" > Create Portfolio</button>
+            <button class="btn btn-info" type="button" (click)="reset()" > Reset Form</button>
         </div>
     </form>
 

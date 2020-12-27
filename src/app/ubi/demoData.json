@@ -58,7 +58,9 @@
     "personal_details":{
       "about": "Innovative, forward-thinking full stack developer with 2 years of experience in up to date technologies such as Angular and Node. Seeking a position in an environment which emphasizes teamwork and encourages learning by doing.",
       "fname": "Sanket Jambhorkar",
-      "work": "Web Developer | Mean Stack Developer"
+      "work": "Web Developer | Mean Stack Developer",
+      "profilePic": "../../../assets/me.jpg"
+
     },
     "projects":[
       {

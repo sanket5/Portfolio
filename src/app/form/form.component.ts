@@ -1,5 +1,6 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PortfolioService } from '../services/portfolio.service';
 
@@ -15,6 +16,8 @@ export class FormComponent implements OnInit {
    }
   myPortfolio: FormGroup
   afile;
+  strFile;
+  uplodedImage;
 
   ngOnInit(): void {
     this.createForm()
@@ -27,13 +30,14 @@ export class FormComponent implements OnInit {
   createForm(){
     this.myPortfolio = this.fb.group({
       "personal_details": this.fb.group({
-        "fname": [''],
-        "work":[''],
-        "about":['']
+        "fname": ['', Validators.required],
+        "work":['',Validators.required],
+        "about":['',Validators.required],
+        "profilePic":['']
       }),
       "contact_details": this.fb.group({
-        "email":[''],
-        "mob":[''],
+        "email":['',Validators.required],
+        "mob":['',Validators.required],
         "address":[''],
         "fb":[''],
         "li":[''],
@@ -51,38 +55,36 @@ export class FormComponent implements OnInit {
   //create controls
   getSkills(){
     return this.fb.group({
-      "skill": [''],
-      "pro":['']
+      "skill": ['',Validators.required],
+      "pro":['',Validators.required]
     })
   }
   getEducation(){
     return this.fb.group({
-      "school": [''],
-      "university": [''],
-      "from":[''],
+      "school": ['',Validators.required],
+      "university": ['',Validators.required],
+      "from":['',Validators.required],
       "to":[''],
-      "ongoing":['']
     })
   }
   getLanguages(){
     return this.fb.group({
-      "language":['']
+      "language":['',Validators.required]
     })
   }
   getExperience(){
     return this.fb.group({
-      "designation":[''],
-      "company":[''],
-      "exp_description":[''],
-      "exp_from":[''],
+      "designation":['',Validators.required],
+      "company":['',Validators.required],
+      "exp_description":['',Validators.required],
+      "exp_from":['',Validators.required],
       "exp_to":[''],
-      "exp_current":['']
     })
   }
   getProjects(){
     return this.fb.group({
-      "pname": [''],
-      "pdescription":['']
+      "pname": ['',Validators.required],
+      "pdescription":['',Validators.required]
     })
   }
 
@@ -146,13 +148,35 @@ export class FormComponent implements OnInit {
   }
 
 
+
   //other
   onSubmit(){
-    console.log(this.myPortfolio.value);
+    // this.myPortfolio.get('education_details').patchValue('profilePic', this.afile) 
+    this.myPortfolio.value.personal_details.profilePic = sessionStorage.getItem('profilePic')
+    sessionStorage.removeItem('profilePic')
+    console.log(this.myPortfolio.value );
     this.portService.updatePortfoioData(this.myPortfolio.value)
     sessionStorage.setItem('userData', JSON.stringify(this.myPortfolio.value))    
-    this.route.navigate(['/profile/me'])
+    this.route.navigate(['/profile/me']) 
+  }
 
+  reset(){
+    this.myPortfolio.reset()
+  }
+
+  selectPic(e){
+    let file = e.target.files[0]
+    console.log(file);
+    let reader = new FileReader();
+    var ob = (<HTMLImageElement> document.getElementById('uplodedImg'))
+
+    this.afile = reader.onloadend = function() {
+        console.log('RESULT', reader.result)
+        sessionStorage.setItem('profilePic', String(reader.result))
+        ob.src = String(reader.result)
+        ob.style.display = 'inline'
+    }
+    reader.readAsDataURL(file);
     
   }
 
